@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const emailValidator = require('email-validator');
 // const bcrypt = require('bcrypt');
 const crypto = require('crypto');
-const { db_link } = require('../../secrets');
+const { db_link } = require('../secrets');
 mongoose.connect(db_link).then(function (db) {
     // console.log(db);
     console.log('Database connected');

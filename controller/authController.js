@@ -1,4 +1,4 @@
-const { JWT_Key } = require('../../secrets');
+const { JWT_Key } = require('../secrets');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 const { sendMail } = require('../nodemailer');

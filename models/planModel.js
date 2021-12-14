@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { db_link } = require('../../secrets');
+const { db_link } = require('../secrets');
 mongoose.connect(db_link).then(function (db) {
     // console.log(db);
     console.log('Database connected');

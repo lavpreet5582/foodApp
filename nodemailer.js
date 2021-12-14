@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const {email,mailpass} = require('../secrets');
+const {email,mailpass} = require('./secrets');
 
 // let testAccount = await nodemailer.createTestAccount();
 module.exports.sendMail = async function sendMail(str, data) {

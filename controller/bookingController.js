@@ -1,4 +1,4 @@
-const { SK } = require('../../secrets');
+const { SK } = require('../secrets');
 const stripe = require('stripe');
 const planModel = require('../models/planModel');
 const userModel = require('../models/userModel');
