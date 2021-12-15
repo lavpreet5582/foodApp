@@ -18,9 +18,9 @@ userRouter.route('/login').post(loginUser);
 userRouter.route('/logout').get(logoutUser);
 
 
-userRouter.route('/forgetPassword')
+userRouter.route('/forgetpassword')
     .post(forgetPassword);
-userRouter.route('/resetPassword/:token')
+userRouter.route('/resetpassword/:token')
     .post(resetPassword);
 
 
