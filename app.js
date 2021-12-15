@@ -1,14 +1,13 @@
 const express = require('express');
 
 const cookieParser = require('cookie-parser');
-
 const userRouter = require('./Routers/userRouter');
 const planRouter = require('./Routers/planRouter');
 const reviewRouter = require('./Routers/reviewRouter');
 // const authRouter = require('./Routers/authRouter');
 const bookingRouter = require('./Routers/bookingRouter');
 const app = express();
-app.use(express.static('/public/build'));
+app.use(express.static('public/build'));
 app.use(express.json());
 const port = process.env.PORT||3000;
 // console.log(port);
