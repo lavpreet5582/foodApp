@@ -10,12 +10,13 @@ const bookingRouter = require('./Routers/bookingRouter');
 const app = express();
 app.use(express.static('/public/build'));
 app.use(express.json());
-const port = process.env.PORT||5000;
+const port = process.env.PORT||3000;
+// console.log(port);
 app.listen(port);
 app.use(cookieParser());
 
 app.use('/user', userRouter);
-app.use('/plan', planRouter);
+app.use('/plans', planRouter);
 
 app.use('/review', reviewRouter);
 
