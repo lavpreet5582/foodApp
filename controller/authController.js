@@ -57,7 +57,7 @@ module.exports.loginUser = async function loginUser(req, res) {
 
                     return res.json({
                         message: 'User logged in',
-                        userDetail: data
+                        userDetail: user
                     })
                 } else {
                     return res.json({
