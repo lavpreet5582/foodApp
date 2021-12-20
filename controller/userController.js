@@ -44,7 +44,8 @@ module.exports.updateUser = async function updateUser(req, res) {
             }
             const updatedData = await user.save();
             res.json({
-                message: "data updated successfully"
+                message: "data updated successfully",
+                data:updatedData
             })
         } else {
             res.json({

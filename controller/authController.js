@@ -66,6 +66,7 @@ module.exports.loginUser = async function loginUser(req, res) {
                 }
 
             } else {
+                // alert("Plz Signup First");
                 return res.json({
                     message: 'user not found'
                 });
