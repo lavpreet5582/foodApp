@@ -53,15 +53,16 @@ module.exports.getPlanReviews = async function getPlanReviews(req, res) {
 
     try {
         let planId = req.params.id;
-        const reviews = await reviewModel.find();
-        const review = reviews.filter(rev=>{
-            return rev.plan._id==planId;
+        let reviews = await reviewModel.find();
+        reviews = reviews.filter(rev => {
+            // console.log(rev.plan);
+            return rev.plan._id == planId;
         })
         // console.log(review);
-        if (review) {
+        if (reviews) {
             return res.json({
                 message: "reviews retrieved",
-                data: review
+                data: reviews
             });
         } else {
             return res.json({
@@ -87,8 +88,9 @@ module.exports.createReview = async function createReview(req, res) {
         let review = await reviewModel.create(req.body);
         // console.log(review);
         if (plan) {
-            plan.rating = ((plan.rating * plan.noOfReviews) + req.body.rating) / (plan.noOfReviews + 1);
+            plan.rating = Math.round(((plan.rating + req.body.rating) / 2) * 10 / 10);
             plan.noOfReviews = plan.noOfReviews + 1;
+            // plan.noOfReviews  = 1;
             await plan.save();
             return res.json({
                 message: 'review created successfully',
@@ -118,6 +120,7 @@ module.exports.updateReview = async function updateReview(req, res) {
             keys.push(key);
         }
         let review = await reviewModel.findById(id);
+        console.log(review);
         if (review) {
             for (let i = 0; i < keys.length; i++) {
                 review[keys[i]] = dataToBeUpdated[keys[i]];
@@ -144,10 +147,18 @@ module.exports.deleteReview = async function deleteReview(req, res) {
     try {
         let id = req.params.id;
         // console.log(id);
+        // let review = await reviewModel.findById(id);
+        // console.log(planId);
         const deletedReview = await reviewModel.findByIdAndDelete(id);
+        let planId = deletedReview.plan._id;
+        console.log(planId);
+        let plan = await planModel.findById(planId);
+        plan.noOfReviews = plan.noOfReviews - 1;
+        await plan.save();
         if (deletedReview) {
             return res.json({
-                message: 'review deleted successfully'
+                message: 'review deleted successfully',
+                data: deletedReview
             });
         } else {
             return res.json({
