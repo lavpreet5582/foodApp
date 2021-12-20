@@ -26,28 +26,30 @@ userRouter.route('/resetpassword/:token')
 
 //multer 
 
-const multerStorage=multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,'public/image')
+const multerStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "C:/Users/lavpreet singh/OneDrive/Desktop/gtbit web dev/Backend/learn/public/image");
     },
-    filename:function(req,file,cb){
-        cb(null,`user-${Date.now()}.jpeg`)
+    filename: function (req, file, cb) {
+        cb(null, `user-${Date.now()}.jpeg`)
     }
 });
 
 const filter = function (req, file, cb) {
     if (file.mimetype.startsWith("image")) {
-      cb(null, true)
+        cb(null, true)
     } else {
-      cb(new Error("Not an Image! Please upload an image"), false)
+        cb(new Error("Not an Image! Please upload an image"), false)
     }
-  }
+}
 
 const upload = multer({
     storage: multerStorage,
     fileFilter: filter
-  });
-userRouter.post('/ProfileImage', upload.single("photo"), updateProfileImage);
+});
+
+
+userRouter.post('/ProfileImage', upload.single('photo'), updateProfileImage);
 
 userRouter.get('/ProfileImage', (req, res) => {
     res.sendFile("C:/Users/lavpreet singh/OneDrive/Desktop/gtbit web dev/Backend/learn/multer.html");
