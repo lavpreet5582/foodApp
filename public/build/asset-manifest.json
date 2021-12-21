@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.667c8ed4.chunk.css",
-    "main.js": "/static/js/main.fae7c5e8.chunk.js",
-    "main.js.map": "/static/js/main.fae7c5e8.chunk.js.map",
+    "main.css": "/static/css/main.955b637b.chunk.css",
+    "main.js": "/static/js/main.a1513cfe.chunk.js",
+    "main.js.map": "/static/js/main.a1513cfe.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b0837650.js",
     "runtime-main.js.map": "/static/js/runtime-main.b0837650.js.map",
     "static/js/2.ac027d78.chunk.js": "/static/js/2.ac027d78.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.465f953a.chunk.js": "/static/js/3.465f953a.chunk.js",
     "static/js/3.465f953a.chunk.js.map": "/static/js/3.465f953a.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.667c8ed4.chunk.css.map": "/static/css/main.667c8ed4.chunk.css.map",
+    "static/css/main.955b637b.chunk.css.map": "/static/css/main.955b637b.chunk.css.map",
     "static/js/2.ac027d78.chunk.js.LICENSE.txt": "/static/js/2.ac027d78.chunk.js.LICENSE.txt",
     "static/media/Avocado.a47677c6.mp4": "/static/media/Avocado.a47677c6.mp4",
     "static/media/Capture.611de11d.png": "/static/media/Capture.611de11d.png",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.b0837650.js",
     "static/js/2.ac027d78.chunk.js",
-    "static/css/main.667c8ed4.chunk.css",
-    "static/js/main.fae7c5e8.chunk.js"
+    "static/css/main.955b637b.chunk.css",
+    "static/js/main.a1513cfe.chunk.js"
   ]
 }
