@@ -101,10 +101,25 @@ module.exports.getUser = async function getUser(req, res) {
 
 }
 
-module.exports.updateProfileImage = function updateProfileImage(req,res){
-    res.json({
-        message:'file Uploaded'
-    });
+module.exports.updateProfileImage =async function updateProfileImage(req,res){
+    let userId = req.params.id;
+    let file = req.body;
+    let user = await userModel.findById(userId);
+    if(user){
+        user.profileImage = URL.createObjectURL(file);
+        await user.save();
+
+        return res.json({
+            message:'file Uploaded',
+            data:user
+        })
+
+    }else {
+        return res.json({
+            message:'cannot Find User'
+        })
+    }
+        
 }
 
 // function setCookies(req, res) {
