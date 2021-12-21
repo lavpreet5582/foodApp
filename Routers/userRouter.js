@@ -49,9 +49,9 @@ const upload = multer({
 });
 
 
-userRouter.post('/ProfileImage/:id', upload.single('photo'), updateProfileImage);
+userRouter.post('/ProfileImagezz', upload.single('photo'), updateProfileImage);
 
-userRouter.get('/ProfileImage/:id', (req, res) => {
+userRouter.get('/ProfileImage', (req, res) => {
     res.sendFile("C:/Users/lavpreet singh/OneDrive/Desktop/gtbit web dev/Backend/learn/multer.html");
 })
 userRouter.use(protectRoute);
